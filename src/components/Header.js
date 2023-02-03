@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Header() {
+export default function Header({ countCartItems }) {
   return (
     <header className="row block center">
       <div>
@@ -9,7 +9,7 @@ export default function Header() {
         </a>
       </div>
       <div>
-        <a href="#/cart">Cart</a>&nbsp;
+        <a href="#/cart">Cart {countCartItems ? <button className="badge">{countCartItems}</button> : ''}</a>{' '}
         <a href="#/signin">Sign In</a>
       </div>
     </header>
