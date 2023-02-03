@@ -30,12 +30,17 @@ function App() {
     }
   };
 
+  const onCheckout = () => {
+    // TODO: On clicking checkout, implement checkout feature, like payment gateway integration
+    console.log('Checkout needs to be implemented');
+  };
+
   return (
     <div className="App">
       <Header countCartItems={cartItems.length}></Header>
       <div className="row">
         <Main products={products} onAdd={onAdd}></Main>
-        <Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}></Basket>
+        <Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onCheckout={onCheckout}></Basket>
       </div>
     </div>
   );

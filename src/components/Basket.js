@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Basket({ cartItems, onAdd, onRemove }) {
+export default function Basket({ cartItems, onAdd, onRemove, onCheckout }) {
   const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
   const taxPrice = itemsPrice * 0.18;
   const shippingPrice = itemsPrice > 2000 ? 0 : 50;
@@ -48,6 +48,10 @@ export default function Basket({ cartItems, onAdd, onRemove }) {
             <div className="col-1 text-right">
               <strong>${totalPrice.toFixed(2)}</strong>
             </div>
+          </div>
+          <hr />
+          <div className="row">
+            <button onClick={() => onCheckout()}>Checkout </button>
           </div>
         </>
       )}
